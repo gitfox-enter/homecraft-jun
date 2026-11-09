@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f5f2e9">
+<!-- The world draws its own day and night. -->
+<meta name="color-scheme" content="only light">
+<meta name="darkreader-lock">
+<meta name="description" content="JUN — 酒店管理在读 · 开发者。3D 个人主页，基于 Homecraft 引擎。">
+<title>JUN — Hospitality × Code</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="JUN — Hospitality × Code">
+<meta property="og:description" content="酒店管理在读 · 开发者。3D 个人主页，基于 Homecraft 引擎。">
+<meta property="og:image" content="assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png?v=pixel-v2">
+<link rel="stylesheet" href="../../engine/style.css">
+<style>
+  /* 四季酒店风格：米白底 + 衬线字体 + 金色点缀 + 留白 */
+  :root {
+    --hotel-cream: #f5f2e9;
+    --hotel-gold: #c9a227;
+    --hotel-gold-dark: #a87d1c;
+    --hotel-ink: #2a2a2a;
+    --hotel-mono: #e8e5d8;
+  }
+  body {
+    background-color: var(--hotel-cream);
+    color: var(--hotel-ink);
+    font-family: "Noto Serif SC", "Serif", serif;
+  }
+  h1, h2, h3 {
+    font-family: "Noto Serif SC", "Serif", serif;
+  }
+  .mc-button {
+    background-color: var(--hotel-gold);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-family: "Noto Serif SC", serif;
+  }
+  .mc-button:hover {
+    background-color: var(--hotel-gold-dark);
+  }
+  .store li {
+    background-color: var(--hotel-mono);
+    border-radius: 8px;
+    padding: 16px;
+    margin: 12px;
+    transition: transform 0.2s;
+  }
+  .store li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(168, 125, 28, 0.15);
+  }
+  .store li h3 {
+    color: var(--hotel-gold-dark);
+    margin-bottom: 8px;
+  }
+  .store li p {
+    color: #6b6b6b;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+</style>
+<script type="importmap">{"imports":{
+  "three":"../../vendor/three/three.module.min.js",
+  "@engine/":"../../engine/",
+  "@world/":"./world/",
+  "@config":"./home.config.js"
+}}</script>
+</head>
+<body>
+<main id="world" aria-label="JUN — Hospitality × Code"></main>
+
+<div id="loading"><div class="bar"><i></i></div></div>
+
+<section id="pages">
+  <h1 class="plain-title">JUN — Hospitality × Code</h1>
+
+  <!-- 关于：酒店管理专业介绍 -->
+  <article class="page" data-station="about">
+    <h2 data-en="About">关于我</h2>
+    <div class="about">
+      <div class="about-text" lang="zh-CN">
+        <p>酒店管理专业在读 · 亳州学院。酒店管理 ≈ 提示词工程：把每一位客人的模糊需求，翻译成恰到好处的服务。</p>
+        <div class="about-foot">
+          <a class="mc-button" href="#mailbox" data-open="mailbox">留言</a>
+        </div>
+      </div>
+      <div class="about-text" lang="en">
+        <p>Hospitality Management student at Bozhou University. Hospitality Management ≈ Prompt Engineering — turning each guest’s vague need into the right service.</p>
+        <div class="about-foot">
+          <a class="mc-button" href="#mailbox" data-open="mailbox">Mailbox</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 工作台：酒店房型卡片，每张卡片对应一个博客项目 -->
+  <article class="page" data-station="works">
+    <h2 data-en="Workbench">工作台</h2>
+    <ul class="store">
+      <li data-work="rssforge">
+        <div class="listing">
+          <img src="assets/works/rssforge.webp" alt="" width="64" height="64">
+          <div>
+            <h3>RSSForge</h3>
+            <p>羊毛RSS服务，订阅免费资源信息流</p>
+          </div>
+          <a class="mc-button get" href="https://github.com/gitfox-enter/RSSForge" target="_blank" rel="noopener" data-en="Open">打开</a>
+        </div>
+      </li>
+      <li data-work="bzuu">
+        <div class="listing">
+          <img src="assets/works/bzuu.webp" alt="" width="64" height="64">
+          <div>
+            <h3>bzuu-ima-importer</h3>
+            <p>B站动漫图片导入工具</p>
+          </div>
+          <a class="mc-button get" href="https://github.com/gitfox-enter/bzuu-ima-importer" target="_blank" rel="noopener" data-en="Open">打开</a>
+        </div>
+      </li>
+      <li data-work="wy-crawler">
+        <div class="listing">
+          <img src="assets/works/wy-crawler.webp" alt="" width="64" height="64">
+          <div>
+            <h3>wy-media-crawler</h3>
+            <p>网易云音乐媒体爬虫</p>
+          </div>
+          <a class="mc-button get" href="https://github.com/gitfox-enter/wy-media-crawler" target="_blank" rel="noopener" data-en="Open">打开</a>
+        </div>
+      </li>
+      <li data-work="web-showcase">
+        <div class="listing">
+          <img src="assets/works/web-showcase.webp" alt="" width="64" height="64">
+          <div>
+            <h3>Web Showcase</h3>
+            <p>个人作品展示页面</p>
+          </div>
+          <a class="mc-button get" href="https://github.com/gitfox-enter/web-showcase" target="_blank" rel="noopener" data-en="Open">打开</a>
+        </div>
+      </li>
+      <li data-work="nhor4-exam">
+        <div class="listing">
+          <img src="assets/works/nhor4-exam.webp" alt="" width="64" height="64">
+          <div>
+            <h3>nhor4-exam-prep</h3>
+            <p>CET-4 考试备考工具</p>
+          </div>
+          <a class="mc-button get" href="https://github.com/gitfox-enter/nhor4-exam-prep" target="_blank" rel="noopener" data-en="Open">打开</a>
+        </div>
+      </li>
+    </ul>
+  </article>
+
+  <!-- 关注：GitHub + 邮箱（只留邮箱，不留手机号） -->
+  <article class="page" id="contact" data-station="contact">
+    <h2 data-en="Follow">关注</h2>
+    <ul class="contact">
+      <li data-app="github"><span>GitHub</span><a href="https://github.com/gitfox-enter" target="_blank" rel="noopener">gitfox-enter</a><p data-en="Code and side projects">代码和小项目</p></li>
+      <li data-app="mail"><span data-en="Email">邮件</span><a href="mailto:mrjin2004@163.com">mrjin2004@163.com</a><p data-en="Say hi">打个招呼</p></li>
+    </ul>
+  </article>
+
+  <!-- 留言板 -->
+  <article class="page" id="mailbox" data-station="mailbox">
+    <h2 data-en="Mailbox">留言</h2>
+    <form class="mailbox" action="mailto:mrjin2004@163.com" method="post" enctype="text/plain">
+      <input name="subject" maxlength="80" required placeholder="主题" aria-label="主题，必填" data-en-placeholder="Subject" data-en-label="Subject (required)">
+      <textarea name="message" rows="6" maxlength="1000" required placeholder="输入文字" aria-label="输入文字" data-en-placeholder="Write something" data-en-label="Write something"></textarea>
+      <input name="contact" maxlength="120" required autocomplete="email" placeholder="联系方式（必填，邮箱或微信等）" aria-label="联系方式，必填" data-en-placeholder="Email or other contact (required)" data-en-label="How to reach you (required)">
+      <input class="trap" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="mailbox-foot"><button class="mc-button" type="submit" data-en="Send">发送</button></div>
+      <p class="mailbox-status" role="status" aria-live="polite"></p>
+    </form>
+  </article>
+
+</section>
+
+<!-- file:// cannot load the world modules. -->
+<script>
+if (location.protocol === 'file:') {
+  const zh = /^zh/i.test(navigator.language), note = document.createElement('aside');
+  note.id = 'startupNotice';
+  note.innerHTML = zh
+    ? '<h2>请用本地服务器打开</h2><p>直接双击打开时，浏览器不会加载 3D 世界。在仓库最外层的文件夹里运行 <code>python3 tools/serve.py</code>，它会找一个空闲端口并自动打开首页。</p>'
+    : '<h2>Open it through a local server</h2><p>Browsers don’t load the 3D world from a double-clicked file. In the repository’s top folder, run <code>python3 tools/serve.py</code>. It picks a free port and opens the home page.</p>';
+  document.getElementById('pages').before(note);
+  document.getElementById('loading')?.remove();
+  document.body.classList.add('plain');
+}
+</script>
+<noscript><style>#world,#hud,#loading{display:none}#pages{display:block}</style></noscript>
+<script type="module" src="../../engine/main.js"></script>
+</body>
+</html>

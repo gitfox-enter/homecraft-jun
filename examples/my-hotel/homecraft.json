@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "name": "JUN — Hospitality × Code",
+  "url": "https://gitfox-enter.github.io/",
+  "logo": "assets/favicon.png",
+  "intro": "酒店管理在读 · 开发者 · 把每一位客人的模糊需求，翻译成恰到好处的服务",
+  "lang": ["zh", "en"],
+  "homecraft": true
+}
